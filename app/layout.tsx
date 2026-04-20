@@ -21,6 +21,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Horror Quiz - Nightmarish Challenges",
   description: "Interactive horror-themed quiz with 5 spine-chilling stages. Test your nerve if you dare...",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
 };
 
 export default function RootLayout({

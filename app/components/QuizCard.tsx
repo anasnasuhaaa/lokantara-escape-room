@@ -48,10 +48,10 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
   };
 
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-linear-to-br from-black via-red-950 to-black p-4">
+    <div className="w-full h-screen flex items-center justify-center bg-linear-to-br from-black via-red-950 to-black p-3 sm:p-4 md:p-6">
       {/* Animated background grid */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="grid grid-cols-12 h-full w-full">
+      <div className="absolute inset-0 opacity-5 sm:opacity-10">
+        <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-12 h-full w-full">
           {[...Array(12)].map((_, i) => (
             <div key={i} className="border border-red-500"></div>
           ))}
@@ -59,16 +59,16 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
       </div>
 
       {/* Main card container */}
-      <div className="relative max-w-2xl w-full">
+      <div className="relative max-w-xs sm:max-w-md md:max-w-2xl w-full">
         {/* Stage indicator */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12 text-center">
-          <span className="text-red-500 font-mono text-sm">STAGE {stage}/8</span>
+        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-10 sm:-translate-y-12 text-center">
+          <span className="text-red-500 font-mono text-xs sm:text-sm md:text-base">STAGE {stage}/8</span>
         </div>
 
         {/* Card */}
         <div
           className={`
-            rounded-lg backdrop-blur-sm p-8
+            rounded-lg backdrop-blur-sm p-4 sm:p-5 md:p-6 lg:p-8
             border-2 transition-all duration-300
             ${result === 'correct'
               ? 'border-green-500 bg-green-900/30 shadow-lg shadow-green-500/50'
@@ -79,12 +79,12 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
           `}
         >
           {/* Question */}
-          <div className="mb-8 text-center">
-            <h2 className={`text-3xl font-bold mb-4 animate-fade-in  
+          <div className="mb-4 sm:mb-6 md:mb-8 text-center">
+            <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 animate-fade-in  
             ${result === 'correct'
                 ? ' text-green-400'
                 : ' text-red-400 '
-              }`}>
+              }`} style={{ fontFamily: "creepster, cursive" }}>
               {quiz.question}
             </h2>
             {/* {quiz.hint && (
@@ -98,7 +98,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
           {result !== 'none' && (
             <div
               className={`
-                mb-8 p-4 rounded text-center font-bold text-2xl animate-fade-in
+                mb-4 sm:mb-6 md:mb-8 p-3 sm:p-4 rounded text-center font-bold text-lg sm:text-xl md:text-2xl animate-fade-in
                 ${result === 'correct'
                   ? 'bg-green-500/20 text-green-400 border border-green-500'
                   : 'bg-red-500/20 text-red-400 border border-red-500'
@@ -111,7 +111,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
 
           {/* Form */}
           {result === 'none' && (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
               <div>
                 <input
                   type="text"
@@ -121,8 +121,8 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   disabled={loading}
                   autoFocus
                   className={`
-                    w-full px-4 py-3 rounded bg-black/50 border-2 border-red-500/50
-                    text-white placeholder-red-600/50 focus:outline-none
+                    w-full px-3 sm:px-4 py-2 sm:py-3 rounded bg-black/50 border-2 border-red-500/50
+                    text-sm sm:text-base text-white placeholder-red-600/50 focus:outline-none
                     transition-all duration-200
                     focus:border-red-500 focus:shadow-lg focus:shadow-red-500/30
                     ${loading ? 'opacity-50 cursor-not-allowed' : ''}
@@ -130,12 +130,12 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                 />
               </div>
 
-              <div className="flex gap-4 justify-center">
+              <div className="flex gap-2 sm:gap-3 md:gap-4 justify-center flex-wrap">
                 <button
                   type="submit"
                   disabled={loading}
                   className={`
-                    px-8 py-2 rounded font-bold text-white
+                    px-4 sm:px-6 md:px-8 py-2 rounded font-bold text-white text-sm sm:text-base
                     transition-all duration-200 hover:shadow-lg
                     ${loading
                       ? 'bg-gray-600 cursor-not-allowed opacity-50'
@@ -151,7 +151,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   onClick={onBack}
                   disabled={loading}
                   className={`
-                    px-8 py-2 rounded font-bold text-white border-2 border-red-600
+                    px-4 sm:px-6 md:px-8 py-2 rounded font-bold text-white border-2 border-red-600 text-sm sm:text-base
                     transition-all duration-200
                     ${loading
                       ? 'opacity-50 cursor-not-allowed'
@@ -167,14 +167,14 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
 
           {/* Show back button after result */}
           {result !== 'none' && (
-            <div className="flex justify-center mt-6">
+            <div className="flex justify-center mt-4 sm:mt-6">
               <button
                 onClick={() => {
                   setResult('none');
                   setAnswer('');
                 }}
                 className={`
-                  px-8 py-2 rounded font-bold text-white border-2
+                  px-4 sm:px-6 md:px-8 py-2 rounded font-bold text-white border-2 text-sm sm:text-base
                   transition-all duration-200
                   ${result === 'correct'
                     ? 'border-green-500 hover:bg-green-500/20'
@@ -191,7 +191,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
         {/* Exit button */}
         <button
           onClick={onBack}
-          className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-red-500 hover:text-red-400 transition-colors text-sm font-mono"
+          className="absolute -bottom-10 sm:-bottom-12 left-1/2 transform -translate-x-1/2 text-red-500 hover:text-red-400 transition-colors text-xs sm:text-sm font-mono"
         >
           ← Return to Stage Selection
         </button>
