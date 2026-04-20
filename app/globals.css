@@ -1,6 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Gripen&display=swap");
 @import "tailwindcss";
-
-@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Gripen&display=swap');
 
 :root {
   --background: #0a0a0a;
@@ -20,7 +19,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -30,36 +30,59 @@ html, body {
 body {
   background: linear-gradient(135deg, #0a0a0a 0%, #1a0000 100%);
   color: var(--foreground);
-  font-family: 'Gripen', sans-serif;
+  font-family: "Gripen", sans-serif;
   overflow: hidden;
 }
 
 /* Horror aesthetic animations */
 @keyframes glitch {
-  0%, 100% {
-    text-shadow: -2px -2px 0 #ff1744, 2px 2px 0 #00ff00;
+  0%,
+  100% {
+    text-shadow:
+      -2px -2px 0 #ff1744,
+      2px 2px 0 #00ff00;
   }
   25% {
-    text-shadow: 2px -2px 0 #ff1744, -2px 2px 0 #00ff00;
+    text-shadow:
+      2px -2px 0 #ff1744,
+      -2px 2px 0 #00ff00;
   }
   50% {
-    text-shadow: -2px 2px 0 #ff1744, 2px -2px 0 #00ff00;
+    text-shadow:
+      -2px 2px 0 #ff1744,
+      2px -2px 0 #00ff00;
   }
   75% {
-    text-shadow: 2px 2px 0 #ff1744, -2px -2px 0 #00ff00;
+    text-shadow:
+      2px 2px 0 #ff1744,
+      -2px -2px 0 #00ff00;
   }
 }
 
 @keyframes flicker {
-  0%, 100% { opacity: 1; }
-  25% { opacity: 0.85; }
-  50% { opacity: 1; }
-  75% { opacity: 0.9; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.9;
+  }
 }
 
 @keyframes pulse-red {
-  0%, 100% { box-shadow: 0 0 10px rgba(255, 23, 68, 0.3); }
-  50% { box-shadow: 0 0 30px rgba(255, 23, 68, 0.6); }
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(255, 23, 68, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 23, 68, 0.6);
+  }
 }
 
 @keyframes fade-in-up {
@@ -74,9 +97,15 @@ body {
 }
 
 @keyframes correct-glow {
-  0% { box-shadow: 0 0 10px #4ade80; }
-  50% { box-shadow: 0 0 30px #22c55e; }
-  100% { box-shadow: 0 0 10px #4ade80; }
+  0% {
+    box-shadow: 0 0 10px #4ade80;
+  }
+  50% {
+    box-shadow: 0 0 30px #22c55e;
+  }
+  100% {
+    box-shadow: 0 0 10px #4ade80;
+  }
 }
 
 .glitch {

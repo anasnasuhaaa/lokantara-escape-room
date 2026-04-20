@@ -11,8 +11,9 @@ let audioState: AudioContextType = {
 
 const getAudioContext = (): AudioContext => {
   if (!audioState.audioContext) {
-    audioState.audioContext = new (window.AudioContext ||
-      (window as any).webkitAudioContext)();
+    audioState.audioContext = new (
+      window.AudioContext || (window as any).webkitAudioContext
+    )();
   }
   return audioState.audioContext;
 };
@@ -39,7 +40,7 @@ export const playCorrectSound = () => {
       gain.gain.setValueAtTime(0.3, now + index * noteDuration);
       gain.gain.exponentialRampToValueAtTime(
         0.01,
-        now + index * noteDuration + noteDuration - 0.01
+        now + index * noteDuration + noteDuration - 0.01,
       );
 
       osc.start(now + index * noteDuration);

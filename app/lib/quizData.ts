@@ -8,32 +8,51 @@ export interface Quiz {
 export const quizzes: Quiz[] = [
   {
     id: 1,
-    question: "What is the name of the haunted mansion in our first horror tale?",
-    correctAnswer: "blackwood manor",
+    question:
+      "Nama kabinet Ormawa Ekse sekarang?",
+    correctAnswer: "astana angkasa",
     hint: "A dark place with a dark name...",
   },
   {
     id: 2,
-    question: "How many souls were trapped in the ancient well?",
-    correctAnswer: "13",
+    question: "Departemen yang request website ini (singkatannya)?",
+    correctAnswer: "senbud",
     hint: "An unlucky number...",
   },
   {
     id: 3,
-    question: "What was the name of the cursed doll?",
-    correctAnswer: "vera",
+    question: "Nama hantu dari Indonesia yang identik dengan kuburan?",
+    correctAnswer: "pocong",
     hint: "A girl's name that brings fear...",
   },
   {
     id: 4,
-    question: "In which year did the haunting begin?",
-    correctAnswer: "1887",
+    question: "Tahun berapa angkatan 63 masuk IPB?",
+    correctAnswer: "2026",
     hint: "A date from the distant past...",
   },
   {
     id: 5,
-    question: "What is the final word spoken by the ghost?",
-    correctAnswer: "remember",
+    question: "Nama panggilan ketua Ormawa Ekse sekarang?",
+    correctAnswer: "erpe",
+    hint: "Don't forget... they want you to...",
+  },
+   {
+    id: 6,
+    question: "Harsakala warna biru di MPKMB 62?",
+    correctAnswer: "jalasera",
+    hint: "A date from the distant past...",
+  },
+  {
+    id: 7,
+    question: "Gedung wisuda IPB?",
+    correctAnswer: "gww",
+    hint: "Don't forget... they want you to...",
+  },
+  {
+    id: 8,
+    question: "Fakultas pertama IPB (singkatan)?",
+    correctAnswer: "faperta",
     hint: "Don't forget... they want you to...",
   },
 ];

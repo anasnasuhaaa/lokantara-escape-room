@@ -20,7 +20,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!answer.trim()) {
       return;
     }
@@ -48,7 +48,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
   };
 
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-gradient-to-br from-black via-red-950 to-black p-4">
+    <div className="w-full h-screen flex items-center justify-center bg-linear-to-br from-black via-red-950 to-black p-4">
       {/* Animated background grid */}
       <div className="absolute inset-0 opacity-10">
         <div className="grid grid-cols-12 h-full w-full">
@@ -62,7 +62,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
       <div className="relative max-w-2xl w-full">
         {/* Stage indicator */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-12 text-center">
-          <span className="text-red-500 font-mono text-sm">STAGE {stage}/5</span>
+          <span className="text-red-500 font-mono text-sm">STAGE {stage}/8</span>
         </div>
 
         {/* Card */}
@@ -70,25 +70,28 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
           className={`
             rounded-lg backdrop-blur-sm p-8
             border-2 transition-all duration-300
-            ${
-              result === 'correct'
-                ? 'border-green-500 bg-green-950/30 shadow-lg shadow-green-500/50'
-                : result === 'wrong'
-                  ? 'border-red-500 bg-red-950/50 shadow-lg shadow-red-500/50'
-                  : 'border-red-500/50 bg-black/80 shadow-lg shadow-red-500/30'
+            ${result === 'correct'
+              ? 'border-green-500 bg-green-900/30 shadow-lg shadow-green-500/50'
+              : result === 'wrong'
+                ? 'border-red-500 bg-red-950/50 shadow-lg shadow-red-500/50'
+                : 'border-red-500/50 bg-black/80 shadow-lg shadow-red-500/30'
             }
           `}
         >
           {/* Question */}
           <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold text-red-400 mb-4 animate-fade-in">
+            <h2 className={`text-3xl font-bold mb-4 animate-fade-in  
+            ${result === 'correct'
+                ? ' text-green-400'
+                : ' text-red-400 '
+              }`}>
               {quiz.question}
             </h2>
-            {quiz.hint && (
+            {/* {quiz.hint && (
               <p className="text-red-600/70 text-sm italic">
                 Hint: {quiz.hint}
               </p>
-            )}
+            )} */}
           </div>
 
           {/* Result display */}
@@ -96,14 +99,13 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
             <div
               className={`
                 mb-8 p-4 rounded text-center font-bold text-2xl animate-fade-in
-                ${
-                  result === 'correct'
-                    ? 'bg-green-500/20 text-green-400 border border-green-500'
-                    : 'bg-red-500/20 text-red-400 border border-red-500'
+                ${result === 'correct'
+                  ? 'bg-green-500/20 text-green-400 border border-green-500'
+                  : 'bg-red-500/20 text-red-400 border border-red-500'
                 }
               `}
             >
-              {result === 'correct' ? '✓ CORRECT!' : '✗ WRONG ANSWER'}
+              {result === 'correct' ? '✓ BENAR!' : '✗ SALAH!'}
             </div>
           )}
 
@@ -135,10 +137,9 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   className={`
                     px-8 py-2 rounded font-bold text-white
                     transition-all duration-200 hover:shadow-lg
-                    ${
-                      loading
-                        ? 'bg-gray-600 cursor-not-allowed opacity-50'
-                        : 'bg-red-600 hover:bg-red-500 hover:shadow-red-500/50'
+                    ${loading
+                      ? 'bg-gray-600 cursor-not-allowed opacity-50'
+                      : 'bg-red-600 hover:bg-red-500 hover:shadow-red-500/50'
                     }
                   `}
                 >
@@ -152,10 +153,9 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   className={`
                     px-8 py-2 rounded font-bold text-white border-2 border-red-600
                     transition-all duration-200
-                    ${
-                      loading
-                        ? 'opacity-50 cursor-not-allowed'
-                        : 'hover:bg-red-600/20 hover:shadow-lg'
+                    ${loading
+                      ? 'opacity-50 cursor-not-allowed'
+                      : 'hover:bg-red-600/20 hover:shadow-lg'
                     }
                   `}
                 >
@@ -176,10 +176,9 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                 className={`
                   px-8 py-2 rounded font-bold text-white border-2
                   transition-all duration-200
-                  ${
-                    result === 'correct'
-                      ? 'border-green-500 hover:bg-green-500/20'
-                      : 'border-red-600 hover:bg-red-600/20'
+                  ${result === 'correct'
+                    ? 'border-green-500 hover:bg-green-500/20'
+                    : 'border-red-600 hover:bg-red-600/20'
                   }
                 `}
               >
