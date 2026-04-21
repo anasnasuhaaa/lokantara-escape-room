@@ -11,6 +11,7 @@ interface QuizCardProps {
   onCorrect: () => void;
 }
 
+
 type ResultType = 'none' | 'correct' | 'wrong';
 
 export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorrect }) => {
@@ -84,7 +85,12 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
             ${result === 'correct'
                 ? ' text-green-400'
                 : ' text-red-400 '
-              }`} style={{ fontFamily: "creepster, cursive" }}>
+              }`}
+              style={{
+                fontFamily: "Nosifer, cursive",
+                textTransform: "capitalize"
+              }}
+            >
               {quiz.question}
             </h2>
             {/* {quiz.hint && (

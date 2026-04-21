@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 
 export const metadata: Metadata = {
-  title: "Horror Quiz - Nightmarish Challenges",
+  title: "Lokantara Escape Room",
   description: "Interactive horror-themed quiz with 5 spine-chilling stages. Test your nerve if you dare...",
   viewport: {
     width: 'device-width',

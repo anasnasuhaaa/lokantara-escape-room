@@ -8,14 +8,13 @@ export interface Quiz {
 export const quizzes: Quiz[] = [
   {
     id: 1,
-    question:
-      "Nama kabinet Ormawa Ekse sekarang?",
+    question: "Nama kabinet Ormawa Ekse sekarang?",
     correctAnswer: "astana angkasa",
     hint: "A dark place with a dark name...",
   },
   {
     id: 2,
-    question: "Departemen yang request website ini (singkatannya)?",
+    question: "Departemen yang request website ini (singkatan)?",
     correctAnswer: "senbud",
     hint: "An unlucky number...",
   },
@@ -33,11 +32,11 @@ export const quizzes: Quiz[] = [
   },
   {
     id: 5,
-    question: "Nama panggilan ketua Ormawa Ekse sekarang?",
-    correctAnswer: "erpe",
+    question: "Tahun IPB didiriikan?",
+    correctAnswer: "1963",
     hint: "Don't forget... they want you to...",
   },
-   {
+  {
     id: 6,
     question: "Harsakala warna biru di MPKMB 62?",
     correctAnswer: "jalasera",

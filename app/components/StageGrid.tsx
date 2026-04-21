@@ -13,7 +13,7 @@ export const StageGrid: React.FC<StageGridProps> = ({ currentStage, onStageClick
       {/* Title */}
       <div className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 text-center px-4">
         <h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 tracking-widest text-red-500 glitch"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 tracking-widest text-red-500"
           style={{ fontFamily: "creepster, cursive" }}
         >
           Lokantara Escape Room
@@ -24,7 +24,7 @@ export const StageGrid: React.FC<StageGridProps> = ({ currentStage, onStageClick
       </div>
 
       {/* Stage Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4 lg:gap-6 px-3 sm:px-4 md:px-6">
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-3 md:gap-4 lg:gap-6 px-3 sm:px-4 md:px-6">
         {[1, 2, 3, 4, 5, 6, 7, 8].map((stage) => (
           <button
             key={stage}
