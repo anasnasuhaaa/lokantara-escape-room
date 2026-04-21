@@ -60,10 +60,10 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
       </div>
 
       {/* Main card container */}
-      <div className="relative max-w-xs sm:max-w-md md:max-w-2xl w-full">
+      <div className="relative max-w-xs sm:max-w-md md:max-w-3xl w-full">
         {/* Stage indicator */}
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-10 sm:-translate-y-12 text-center">
-          <span className="text-red-500 font-mono text-xs sm:text-sm md:text-base">STAGE {stage}/8</span>
+          <span className="text-red-500 font-mono text-xs sm:text-sm md:text-base">STAGE {stage}/13</span>
         </div>
 
         {/* Card */}
@@ -81,15 +81,15 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
         >
           {/* Question */}
           <div className="mb-4 sm:mb-6 md:mb-8 text-center">
-            <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 animate-fade-in  
+            <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 animate-fade-in  font-mono
             ${result === 'correct'
                 ? ' text-green-400'
                 : ' text-red-400 '
               }`}
-              style={{
-                fontFamily: "flavors, cursive",
-                textTransform: "capitalize"
-              }}
+              // style={{
+              //   fontFamily: "flavors, cursive",
+              //   textTransform: "capitalize"
+              // }}
             >
               {quiz.question}
             </h2>
@@ -104,7 +104,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
           {result !== 'none' && (
             <div
               className={`
-                mb-4 sm:mb-6 md:mb-8 p-3 sm:p-4 rounded text-center font-bold text-lg sm:text-xl md:text-2xl animate-fade-in
+                mb-4 sm:mb-6 md:mb-8 p-3 sm:p-10 rounded text-center font-bold text-lg sm:text-xl md:text-5xl animate-fade-in font-mono
                 ${result === 'correct'
                   ? 'bg-green-500/20 text-green-400 border border-green-500'
                   : 'bg-red-500/20 text-red-400 border border-red-500'
@@ -123,13 +123,13 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   type="text"
                   value={answer}
                   onChange={(e) => setAnswer(e.target.value)}
-                  placeholder="Masukkan Jawaban..."
+                  placeholder=". . ."
                   disabled={loading}
                   autoFocus
                   className={`
-                    w-full px-3 sm:px-4 py-2 sm:py-6 rounded bg-black/50 border-2 border-red-500/50
-                    text-sm sm:text-2xl text-white placeholder-red-600/50 focus:outline-none
-                    transition-all duration-200
+                    w-full px-3 sm:px-4 py-4 sm:py-10 rounded bg-black/50 border-2 border-red-500/50
+                    text-sm sm:text-6xl text-red-500 placeholder-red-600/50 focus:outline-none
+                    transition-all duration-200 font-mono font-bold
                     focus:border-red-500 focus:shadow-lg focus:shadow-red-500/30
                     ${loading ? 'opacity-50 cursor-not-allowed' : ''}
                   `}
@@ -141,7 +141,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   type="submit"
                   disabled={loading}
                   className={`
-                    px-4 sm:px-6 md:px-8 py-2 rounded font-bold text-white text-sm sm:text-base
+                    px-4 sm:px-6 md:px-8 w-full py-2 rounded font-bold text-white text-sm sm:text-base font-mono
                     transition-all duration-200 hover:shadow-lg
                     ${loading
                       ? 'bg-gray-600 cursor-not-allowed opacity-50'
@@ -180,7 +180,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   setAnswer('');
                 }}
                 className={`
-                  px-4 sm:px-6 md:px-8 py-2 rounded font-bold text-white border-2 text-sm sm:text-base
+                  px-4 sm:px-6 w-full md:px-8 py-2 rounded font-bold text-white border-2 text-sm sm:text-base
                   transition-all duration-200
                   ${result === 'correct'
                     ? 'border-green-500 hover:bg-green-500/20'

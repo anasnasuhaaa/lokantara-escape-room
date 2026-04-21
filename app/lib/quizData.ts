@@ -54,6 +54,36 @@ export const quizzes: Quiz[] = [
     correctAnswer: "faperta",
     hint: "Don't forget... they want you to...",
   },
+  {
+    id: 9,
+    question: "Nama kepala departemen Senbud angkatan sekarang?",
+    correctAnswer: "senbud9",
+    hint: "Look for the answer...",
+  },
+  {
+    id: 10,
+    question: "Berapa jumlah anggota kabinet Astana Angkasa?",
+    correctAnswer: "astana10",
+    hint: "Count them all...",
+  },
+  {
+    id: 11,
+    question: "Siapa pendiri IPB?",
+    correctAnswer: "ibu11",
+    hint: "A historical figure...",
+  },
+  {
+    id: 12,
+    question: "Apa motto IPB?",
+    correctAnswer: "motto12",
+    hint: "Latin words...",
+  },
+  {
+    id: 13,
+    question: "Tahun pertama escape room Senbud?",
+    correctAnswer: "2024",
+    hint: "Recently created...",
+  },
 ];
 
 export const getQuizByStage = (stage: number): Quiz | undefined => {

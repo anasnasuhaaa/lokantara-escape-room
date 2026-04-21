@@ -6,10 +6,29 @@ import { QuizCard } from './components/QuizCard';
 import { getQuizByStage, Quiz } from './lib/quizData';
 import { resumeAudioContext } from './lib/soundEffects';
 
+const STORAGE_KEY = 'lokantara_current_stage';
+
 export default function Home() {
   const [currentStage, setCurrentStage] = useState(1);
   const [activeStage, setActiveStage] = useState<number | null>(null);
   const [quiz, setQuiz] = useState<Quiz | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // Load saved progress from localStorage
+  useEffect(() => {
+    const savedStage = localStorage.getItem(STORAGE_KEY);
+    if (savedStage) {
+      setCurrentStage(parseInt(savedStage, 10));
+    }
+    setIsLoaded(true);
+  }, []);
+
+  // Save progress to localStorage whenever currentStage changes
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem(STORAGE_KEY, currentStage.toString());
+    }
+  }, [currentStage, isLoaded]);
 
   // Resume audio context on first interaction
   useEffect(() => {
@@ -42,16 +61,26 @@ export default function Home() {
   };
 
   const handleCorrectAnswer = () => {
-    if (activeStage && activeStage < 5) {
+    if (activeStage && activeStage < 13) {
       setCurrentStage(activeStage + 1);
     }
     handleBackToStages();
   };
 
+  const handleReset = () => {
+    setCurrentStage(1);
+    setActiveStage(null);
+    setQuiz(null);
+  };
+
+  if (!isLoaded) {
+    return null;
+  }
+
   return (
     <main className="w-full h-screen overflow-hidden">
       {activeStage === null ? (
-        <StageGrid currentStage={currentStage} onStageClick={handleStageClick} />
+        <StageGrid currentStage={currentStage} onStageClick={handleStageClick} onReset={handleReset} />
       ) : quiz ? (
         <QuizCard
           quiz={quiz}
