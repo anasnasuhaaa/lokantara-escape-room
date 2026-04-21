@@ -30,7 +30,7 @@ export const StageGrid: React.FC<StageGridProps> = ({ currentStage, onStageClick
             key={stage}
             onClick={() => onStageClick(stage)}
             className={`
-              relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-lg font-bold
+              relative w-18 h-18 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-lg font-bold
               transition-all duration-300 transform hover:scale-105 sm:hover:scale-110
               flex items-center justify-center font-mono
               ${stage <= currentStage
