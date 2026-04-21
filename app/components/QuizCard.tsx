@@ -87,7 +87,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                 : ' text-red-400 '
               }`}
               style={{
-                fontFamily: "Nosifer, cursive",
+                fontFamily: "flavors, cursive",
                 textTransform: "capitalize"
               }}
             >
@@ -123,12 +123,12 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   type="text"
                   value={answer}
                   onChange={(e) => setAnswer(e.target.value)}
-                  placeholder="Enter your answer..."
+                  placeholder="Masukkan Jawaban..."
                   disabled={loading}
                   autoFocus
                   className={`
-                    w-full px-3 sm:px-4 py-2 sm:py-3 rounded bg-black/50 border-2 border-red-500/50
-                    text-sm sm:text-base text-white placeholder-red-600/50 focus:outline-none
+                    w-full px-3 sm:px-4 py-2 sm:py-6 rounded bg-black/50 border-2 border-red-500/50
+                    text-sm sm:text-2xl text-white placeholder-red-600/50 focus:outline-none
                     transition-all duration-200
                     focus:border-red-500 focus:shadow-lg focus:shadow-red-500/30
                     ${loading ? 'opacity-50 cursor-not-allowed' : ''}
@@ -136,7 +136,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                 />
               </div>
 
-              <div className="flex gap-2 sm:gap-3 md:gap-4 justify-center flex-wrap">
+              <div className="flex justify-center space-x-4">
                 <button
                   type="submit"
                   disabled={loading}
@@ -152,7 +152,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   {loading ? 'Wait...' : 'Submit'}
                 </button>
 
-                <button
+                {/* <button
                   type="button"
                   onClick={onBack}
                   disabled={loading}
@@ -166,7 +166,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   `}
                 >
                   Back
-                </button>
+                </button> */}
               </div>
             </form>
           )}
