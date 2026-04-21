@@ -8,13 +8,13 @@ export interface Quiz {
 export const quizzes: Quiz[] = [
   {
     id: 1,
-    question: "Nama kabinet Ormawa Ekse sekarang?",
-    correctAnswer: "astana angkasa",
+    question: "Nama Angkatan IPB 63?",
+    correctAnswer: "mahadipta nabhaskara",
     hint: "A dark place with a dark name...",
   },
   {
     id: 2,
-    question: "Departemen yang request website ini (singkatan)?",
+    question: "Departemen paling kalcer di Ekse (singkatan)?",
     correctAnswer: "senbud",
     hint: "An unlucky number...",
   },
@@ -26,8 +26,8 @@ export const quizzes: Quiz[] = [
   },
   {
     id: 4,
-    question: "Tahun berapa angkatan 63 masuk IPB?",
-    correctAnswer: "2026",
+    question: "Tahun berapa angkatan 56 masuk IPB?",
+    correctAnswer: "2019",
     hint: "A date from the distant past...",
   },
   {
@@ -38,25 +38,25 @@ export const quizzes: Quiz[] = [
   },
   {
     id: 6,
-    question: "Harsakala warna biru di MPKMB 62?",
-    correctAnswer: "jalasera",
+    question: "Ada berapa Prodi di Fakutlas Ekonomi dan Manajemen (sebutkan angka)?",
+    correctAnswer: "5",
     hint: "A date from the distant past...",
   },
   {
     id: 7,
-    question: "Gedung wisuda IPB?",
-    correctAnswer: "gww",
+    question: "Fakultas dengan kode M?",
+    correctAnswer: "ssmi",
     hint: "Don't forget... they want you to...",
   },
   {
     id: 8,
-    question: "Fakultas pertama IPB (singkatan)?",
-    correctAnswer: "faperta",
+    question: "(1+9)4 + 60?",
+    correctAnswer: "100",
     hint: "Don't forget... they want you to...",
   },
   {
     id: 9,
-    question: "90 / 3 =",
+    question: "30 x 1 x 30 / 30",
     correctAnswer: "30",
     hint: "Look for the answer...",
   },
@@ -80,8 +80,8 @@ export const quizzes: Quiz[] = [
   },
   {
     id: 13,
-    question: "Harga Poki Rp....",
-    correctAnswer: "5000",
+    question: "Kepanjangan POKI?",
+    correctAnswer: "Paguyuban Ojek Kampus IPB",
     hint: "Recently created...",
   },
 ];
