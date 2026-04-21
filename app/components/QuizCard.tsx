@@ -54,7 +54,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
       <div className="absolute inset-0 opacity-5 sm:opacity-10">
         <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-12 h-full w-full">
           {[...Array(12)].map((_, i) => (
-            <div key={i} className="border border-red-500"></div>
+            <div key={i} className="border-2 border-red-500"></div>
           ))}
         </div>
       </div>
@@ -123,7 +123,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   type="text"
                   value={answer}
                   onChange={(e) => setAnswer(e.target.value)}
-                  placeholder=". . ."
+                  placeholder="..."
                   disabled={loading}
                   autoFocus
                   className={`

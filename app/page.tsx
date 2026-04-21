@@ -61,7 +61,7 @@ export default function Home() {
   };
 
   const handleCorrectAnswer = () => {
-    if (activeStage && activeStage < 13) {
+    if (activeStage && activeStage <= 13) {
       setCurrentStage(activeStage + 1);
     }
     handleBackToStages();
