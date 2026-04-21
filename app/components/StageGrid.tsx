@@ -34,22 +34,26 @@ export const StageGrid: React.FC<StageGridProps> = ({ currentStage, onStageClick
       </div>
 
       {/* Stage Grid */}
-      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-3 md:gap-4 lg:gap-6 px-3 sm:px-4 md:px-6">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-3 md:gap-4 lg:gap-6 px-3 sm:px-4 md:px-6">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((stage) => (
           <button
             key={stage}
             onClick={() => onStageClick(stage)}
             className={`
               relative w-18 h-18 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-lg font-bold
-              transition-all duration-300 transform hover:scale-105 sm:hover:scale-110
+              transition-all duration-200 transform 
               flex items-center justify-center font-mono flex-col
-              ${stage <= currentStage
-                ? 'bg-red-600 hover:bg-red-500 text-white cursor-pointer shadow-lg hover:shadow-red-500/50 pulse-red'
+              ${stage == currentStage
+                ? 'bg-red-600 hover:bg-red-500 hover:scale-105 sm:hover:scale-110 text-white cursor-pointer shadow-lg hover:shadow-red-500/50 pulse-red'
+                : 'bg-gray-800 text-gray-600 cursor-not-allowed border-2 border-gray-600'
+              }
+                ${stage < currentStage
+                ? 'bg-red-600 transform hover:scale-100  text-white cursor-pointer shadow-lg hover:shadow-red-500/50 pulse-red'
                 : 'bg-gray-800 text-gray-600 cursor-not-allowed border-2 border-gray-600'
               }
               border-2 border-red-500 text-lg sm:text-xl md:text-2xl
             `}
-            disabled={stage > currentStage}
+            disabled={stage > currentStage || stage < currentStage}
             aria-label={`Stage ${stage}`}
           >
             <span className="text-sm sm:text-xl md:text-2xl lg:text-3xl">
