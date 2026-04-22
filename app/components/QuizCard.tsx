@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Quiz, checkAnswer } from '@/app/lib/quizData';
 import { playCorrectSound, playWrongSound } from '@/app/lib/soundEffects';
+import Link from 'next/link';
 
 interface QuizCardProps {
   quiz: Quiz;
@@ -60,9 +61,9 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
       </div>
 
       {/* Main card container */}
-      <div className="relative max-w-xs sm:max-w-md md:max-w-3xl w-full">
+      <div className="flex flex-col justify-center items-center gap-2 sm:gap-4 max-w-xs sm:max-w-md md:max-w-3xl w-full">
         {/* Stage indicator */}
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-10 sm:-translate-y-12 text-center">
+        <div className=" text-center">
           <span className="text-red-500 font-mono text-xs sm:text-sm md:text-base">STAGE {stage}/13</span>
         </div>
 
@@ -72,10 +73,10 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
             rounded-lg backdrop-blur-sm p-4 sm:p-5 md:p-6 lg:p-8
             border-2 transition-all duration-300
             ${result === 'correct'
-              ? 'border-green-500 bg-green-900/30 shadow-lg shadow-green-500/50'
+              ? 'border-green-500 bg-green-900/30 shadow-md shadow-green-500/50 w-full h-full'
               : result === 'wrong'
-                ? 'border-red-500 bg-red-950/50 shadow-lg shadow-red-500/50'
-                : 'border-red-500/50 bg-black/80 shadow-lg shadow-red-500/30'
+                ? 'border-red-500 bg-red-950/50 shadow-md shadow-red-500/50 w-full h-full'
+                : 'border-red-500/50 bg-black/80 shadow-md shadow-red-500/30 w-full h-full'
             }
           `}
         >
@@ -86,10 +87,10 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                 ? ' text-green-400'
                 : ' text-red-400 '
               }`}
-              // style={{
-              //   fontFamily: "flavors, cursive",
-              //   textTransform: "capitalize"
-              // }}
+            // style={{
+            //   fontFamily: "flavors, cursive",
+            //   textTransform: "capitalize"
+            // }}
             >
               {quiz.question}
             </h2>
@@ -106,8 +107,8 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
               className={`
                 mb-4 sm:mb-6 md:mb-8 p-3 sm:p-10 rounded text-center font-bold text-lg sm:text-xl md:text-5xl animate-fade-in font-mono
                 ${result === 'correct'
-                  ? 'bg-green-500/20 text-green-400 border border-green-500'
-                  : 'bg-red-500/20 text-red-400 border border-red-500'
+                  ? 'bg-green-400/20 text-green-400 border border-green-500 px-3 sm:px-4 py-4 sm:py-10'
+                  : 'bg-red-500/20 text-red-400 border border-red-500 px-3 sm:px-4 py-4 sm:py-10'
                 }
               `}
             >
@@ -197,9 +198,9 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
         {/* Exit button */}
         <button
           onClick={onBack}
-          className="absolute -bottom-10 sm:-bottom-12 left-1/2 transform -translate-x-1/2 text-red-500 hover:text-red-400 transition-colors text-xs sm:text-sm font-mono"
+          className=" z-50 text-white py-1 px-2 rounded bg-gray-700 hover:bg-gray-600 transition-colors text-xs sm:text-sm font-mono"
         >
-          ← Return to Stage Selection
+          Return to Stage Selection
         </button>
       </div>
     </div>

@@ -14,14 +14,14 @@ export const quizzes: Quiz[] = [
   },
   {
     id: 2,
-    question: "Departemen paling kalcer di Ekse (singkatan)?",
+    question: "Departemen paling kalcer di Ormawa Ekse (singkatan)?",
     correctAnswer: "senbud",
     hint: "An unlucky number...",
   },
   {
     id: 3,
-    question: "Nama hantu dari Indonesia yang identik dengan kuburan?",
-    correctAnswer: "pocong",
+    question: "Harsakala warna coklat di MPKMB IPB 62?",
+    correctAnswer: "bardacakra",
     hint: "A girl's name that brings fear...",
   },
   {
@@ -32,13 +32,13 @@ export const quizzes: Quiz[] = [
   },
   {
     id: 5,
-    question: "Tahun IPB didiriikan?",
+    question: "Tahun berapa IPB didirikan?",
     correctAnswer: "1963",
     hint: "Don't forget... they want you to...",
   },
   {
     id: 6,
-    question: "Ada berapa Prodi di Fakutlas Ekonomi dan Manajemen (sebutkan angka)?",
+    question: "Ada berapa Prodi di Fakultas Ekonomi dan Manajemen (sebutkan angka)?",
     correctAnswer: "5",
     hint: "A date from the distant past...",
   },

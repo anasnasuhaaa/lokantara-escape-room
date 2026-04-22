@@ -44,11 +44,11 @@ export const StageGrid: React.FC<StageGridProps> = ({ currentStage, onStageClick
               transition-all duration-200 transform 
               flex items-center justify-center font-mono flex-col
               ${stage == currentStage
-                ? 'bg-red-600 hover:bg-red-500 hover:scale-105 sm:hover:scale-110 text-white cursor-pointer shadow-lg hover:shadow-red-500/50 pulse-red'
+                ? 'bg-red-600 hover:bg-red-500 hover:scale-105 sm:hover: text-white cursor-pointer shadow-lg hover:shadow-red-500/50 pulse-red'
                 : 'bg-gray-800 text-gray-600 cursor-not-allowed border-2 border-gray-600'
               }
                 ${stage < currentStage
-                ? 'bg-red-600 transform hover:scale-100  text-white cursor-pointer shadow-lg hover:shadow-red-500/50 pulse-red'
+                ? 'bg-red-600 transform hover:scale-100  text-white cursor-not-allowed shadow-lg hover:shadow-red-500/50 pulse-red'
                 : 'bg-gray-800 text-gray-600 cursor-not-allowed border-2 border-gray-600'
               }
               border-2 border-red-500 text-lg sm:text-xl md:text-2xl
