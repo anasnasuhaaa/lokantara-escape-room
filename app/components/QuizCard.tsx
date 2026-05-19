@@ -130,7 +130,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   onChange={(e) => setAnswer(e.target.value)}
                   placeholder="..."
                   disabled={loading}
-                  autoFocus
+                  autoFocus={false}
                   className={`
                     w-full px-3 sm:px-4 py-4 sm:py-10 rounded bg-black/50 border-2 border-red-500/50
                     text-4xl sm:text-6xl md:text-8xl text-red-500 placeholder-red-600/50 focus:outline-none
