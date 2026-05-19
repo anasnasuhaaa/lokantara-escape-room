@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Quiz, checkAnswer } from '@/app/lib/quizData';
 import { playCorrectSound, playWrongSound } from '@/app/lib/soundEffects';
 import Link from 'next/link';
+import { TypingEffect } from './TypingEffect';
 
 interface QuizCardProps {
   quiz: Quiz;
@@ -64,7 +65,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
       <div className="flex flex-col justify-center items-center gap-2 sm:gap-4 max-w-xs sm:max-w-md md:max-w-3xl w-full">
         {/* Stage indicator */}
         <div className=" text-center">
-          <span className="text-red-500 font-mono text-xs sm:text-sm md:text-base">STAGE {stage}/13</span>
+          {/* <span className="text-red-500 font-mono text-xs sm:text-sm md:text-base">STAGE {stage}/13</span> */}
         </div>
 
         {/* Card */}
@@ -82,18 +83,21 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
         >
           {/* Question */}
           <div className="mb-4 sm:mb-6 md:mb-8 text-center">
-            <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 animate-fade-in  font-mono
+            {/* <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-6xl tracking-wider font-bold mb-2 sm:mb-3 md:mb-4 animate-fade-in  font-mono
             ${result === 'correct'
                 ? ' text-green-400'
                 : ' text-red-400 '
               }`}
-            // style={{
-            //   fontFamily: "flavors, cursive",
-            //   textTransform: "capitalize"
-            // }}
+              style={{ fontFamily: "creepster, cursive",}}
             >
               {quiz.question}
-            </h2>
+            </h2> */}
+            <TypingEffect text={quiz.question} className={`text-2xl sm:text-4xl md:text-6xl tracking-widest font-bold mb-2 sm:mb-3 md:mb-4 animate-fade-in  font-mono
+            ${result === 'correct'
+                ? ' text-green-400'
+                : ' text-red-400 '
+              }`}
+            />
             {/* {quiz.hint && (
               <p className="text-red-600/70 text-sm italic">
                 Hint: {quiz.hint}
@@ -129,11 +133,12 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   autoFocus
                   className={`
                     w-full px-3 sm:px-4 py-4 sm:py-10 rounded bg-black/50 border-2 border-red-500/50
-                    text-sm sm:text-6xl text-red-500 placeholder-red-600/50 focus:outline-none
+                    text-4xl sm:text-6xl md:text-8xl text-red-500 placeholder-red-600/50 focus:outline-none
                     transition-all duration-200 font-mono font-bold
-                    focus:border-red-500 focus:shadow-lg focus:shadow-red-500/30
+                    focus:border-red-500 focus:shadow-lg focus:shadow-red-500/30 tracking-widest
                     ${loading ? 'opacity-50 cursor-not-allowed' : ''}
                   `}
+                  style={{ fontFamily: "creepster, cursive", }}
                 />
               </div>
 
@@ -189,7 +194,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
                   }
                 `}
               >
-                {result === 'correct' ? 'Continue' : 'Try Again'}
+                {result === 'correct' ? 'Lanjutkan' : 'Coba Lagi'}
               </button>
             </div>
           )}
@@ -200,7 +205,7 @@ export const QuizCard: React.FC<QuizCardProps> = ({ quiz, stage, onBack, onCorre
           onClick={onBack}
           className=" z-50 text-white py-1 px-2 rounded bg-gray-700 hover:bg-gray-600 transition-colors text-xs sm:text-sm font-mono"
         >
-          Return to Stage Selection
+          Kembali ke halaman awal
         </button>
       </div>
     </div>
